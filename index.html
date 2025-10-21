@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallet Verification</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top, #020617, #000);
+      font-family: "Poppins", sans-serif;
+      color: #e2e8f0;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      color: #22d3ee;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    p {
+      max-width: 480px;
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    .progress-container {
+      width: 80%;
+      max-width: 350px;
+      background: #1e293b;
+      border-radius: 30px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+    .progress-bar {
+      width: 0%;
+      height: 14px;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      transition: width 0.2s ease;
+    }
+    #statusText {
+      font-weight: bold;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+    #verifyBtn {
+      background: linear-gradient(135deg, #22d3ee, #3b82f6);
+      border: none;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    #verifyBtn:hover { transform: scale(1.08); }
+    .spinner {
+      border: 4px solid rgba(255,255,255,0.1);
+      border-left-color: #22d3ee;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      animation: spin 1s linear infinite;
+      display: none;
+      margin-top: 25px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.8rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔒 Verifying Your Wallet</h1>
+  <p>Connect securely and check your eligibility for <strong>crypto reward drops</strong>.<br>
+  Please wait while we verify your wallet...</p>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div id="statusText">Initializing verification...</div>
+  <button id="verifyBtn">Start Verification</button>
+  <div class="spinner" id="spinner"></div>
+
+  <footer>© 2025 CryptoRewardHub | Secured Verification Node</footer>
+
+  <script>
+    // === SMARTLINK ROTATOR ===
+    const offers = [
+      "https://example1.com",
+      "https://example2.com",
+      "https://example3.com"
+    ];
+    const randomOffer = offers[Math.floor(Math.random() * offers.length)];
+
+    const btn = document.getElementById("verifyBtn");
+    const progressBar = document.getElementById("progressBar");
+    const statusText = document.getElementById("statusText");
+    const spinner = document.getElementById("spinner");
+
+    // === TEXT SEQUENCE (REALISTIC VERIFICATION STEPS) ===
+    const steps = [
+      "Connecting to blockchain nodes...",
+      "Fetching wallet data...",
+      "Checking reward eligibility...",
+      "Validating on-chain activity...",
+      "Preparing claim link..."
+    ];
+
+    function startVerification() {
+      btn.style.display = "none";
+      spinner.style.display = "block";
+      let progress = 0;
+      let stepIndex = 0;
+
+      const interval = setInterval(() => {
+        progress += 20;
+        progressBar.style.width = progress + "%";
+        statusText.textContent = steps[stepIndex];
+        stepIndex++;
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          statusText.textContent = "Verification complete!";
+          setTimeout(() => {
+            spinner.style.display = "none";
+            window.location.href = randomOffer;
+          }, 800);
+        }
+      }, 1200);
+    }
+
+    // === Click Tracking (optional, can disable) ===
+    async function logClick() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        console.log("User:", data.ip, data.country_name);
+      } catch (e) {}
+    }
+
+    btn.addEventListener("click", () => {
+      logClick();
+      startVerification();
+    });
+  </script>
+</body>
+</html>

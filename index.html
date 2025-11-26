@@ -1,103 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blockchain Web3 Verification</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>🔥 Airdrop Baru Potensi $50 - $300</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #00eaff;
-    }
-
-    p {
-      font-size: 16px;
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background-color: #00eaff;
-      color: #000;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #00b8cc;
-    }
-
-    #countdown {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #00ff99;
-    }
-  </style>
-  
-    <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="356127"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f7f7f7;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover { background: #0056b3; }
+</style>
 </head>
+
 <body>
-  <h1>Blockchain Wallet Verification</h1>
-  <p>Please wait while we verify your eligibility for the crypto reward drop.</p>
-  <button id="verifyBtn">Start Verification</button>
+<div class="container">
+    <h2>🚀 Airdrop Terbaru Berpotensi Besar</h2>
+    <p>
+        Ada peluang airdrop besar yang sedang ramai diperbincangkan di komunitas crypto.  
+        Perkiraan reward mencapai <b>$50 – $300 per akun</b> bagi yang menyelesaikan tugas lebih awal.
+    </p>
 
-  <div id="countdown" style="display:none;">
-    Redirecting in <span id="seconds">5</span> seconds...
-  </div>
+    <p>
+        Task-nya ringan: connect wallet, claim token testnet, swap kecil, dan join sosial.  
+        Semuanya dapat dilakukan hanya beberapa menit.
+    </p>
 
-  <script>
-    // === CONFIGURATION ===
-    const redirectLinks = [
-      "https://otieu.com/4/10109309",
-  "https://annual-tower.com/CnVEAm",
-  "https://otieu.com/4/10109321"
-    ]; // daftar link rotator kamu
-    const redirectDelay = 5; // detik
+    <p>
+        <b>Daftar cepat sebelum kuota early user ditutup.</b>
+    </p>
 
-    // === FUNCTIONS ===
-    function startCountdown() {
-      document.getElementById("countdown").style.display = "block";
-      let seconds = redirectDelay;
-      const countdownEl = document.getElementById("seconds");
+    <button id="cta">👉 Lihat Tutorial Airdrop (Mulai Sekarang)</button>
+</div>
 
-      const countdown = setInterval(() => {
-        seconds--;
-        countdownEl.textContent = seconds;
-        if (seconds <= 0) {
-          clearInterval(countdown);
-          const randomLink = redirectLinks[Math.floor(Math.random() * redirectLinks.length)];
-          window.location.href = randomLink;
-        }
-      }, 1000);
-    }
+<script>
+// === DIRECT LINK MONETAG VERSION ===
+// Direct link akan dibuka di tab baru saat user klik CTA,
+// setelah itu redirect ke shortlink kamu.
 
-    // Auto redirect setelah halaman dimuat
-    window.addEventListener("load", () => {
-      startCountdown();
-    });
+document.getElementById("cta").addEventListener("click", function () {
 
-    // Juga redirect setelah tombol diklik
-    document.getElementById("verifyBtn").addEventListener("click", () => {
-      startCountdown();
-    });
-  </script>
+    // 1. Open Monetag direct link (CPC/CPA) di tab baru
+    window.open("https://otieu.com/4/10165570", "_blank");
+
+    // 2. Redirect ke shortlink setelah 300ms
+    setTimeout(function(){
+        window.location.href = "https://shrinkme.click/stl9";
+    }, 300);
+
+});
+</script>
+
 </body>
 </html>
